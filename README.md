@@ -46,16 +46,18 @@ A visual architecture diagram is available here:
 - Role-based access control
 - Security monitoring and rate limiting
 
-## Tech Stack
+## Easy Tech Stack
 
-This project can be implemented with a variety of technologies, such as:
+This version uses a simple and beginner-friendly stack:
 
-- Frontend: HTML, CSS, JavaScript / React / Angular
-- Backend: Node.js, Java, Python, or ASP.NET
-- Database: PostgreSQL or MySQL
-- Authentication: JWT, OAuth2, OTP, or MFA
-- Messaging: RabbitMQ or Kafka
-- Deployment: Docker, Kubernetes, or cloud hosting
+- Frontend: HTML, CSS, JavaScript
+- Backend: Python (Flask)
+- Database: SQLite
+- Authentication: No authentication
+- Styling: Bootstrap
+- Deployment: Local server or simple hosting
+
+This stack is easy to understand, lightweight, and suitable for a college or student project.
 
 ## Project Structure
 
@@ -63,29 +65,47 @@ This project can be implemented with a variety of technologies, such as:
 online-voting-system/
 ├── README.md
 ├── online-voting-architecture.svg
-├── frontend/
-├── backend/
-├── database/
-├── docs/
-└── scripts/
+├── app/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── routes.py
+│   ├── database.py
+│   └── templates/
+├── static/
+│   ├── css/
+│   └── js/
+├── instance/
+│   └── voting.db
+├── requirements.txt
+└── run.py
 ```
 
 ## Getting Started
 
 1. Clone the repository.
-2. Set up the backend environment and database.
-3. Configure environment variables.
-4. Start the frontend and API services.
-5. Run the application and test the voting flow.
+2. Create a virtual environment.
+3. Install dependencies from `requirements.txt`.
+4. Set up SQLite database.
+5. Run the Flask server.
+6. Open the app in the browser and test election and voting flows.
+
+### Example setup
+
+```bash
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python run.py
+```
 
 ## Security Considerations
 
-- Use secure authentication and authorization
 - Prevent duplicate voting
-- Log all actions in an audit trail
-- Protect the system from injection and brute-force attacks
-- Use HTTPS and secure session management
-- Validate data at both client and server levels
+- Validate all form inputs on the server side
+- Use SQLite safely with parameterized SQL queries
+- Store vote records and admin actions in a simple audit trail
+- Keep the app behind a local or restricted environment if used for demo purposes
+- Add stronger security later if needed
 
 ## License
 
